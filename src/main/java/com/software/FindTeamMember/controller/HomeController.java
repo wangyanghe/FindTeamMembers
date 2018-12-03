@@ -5,7 +5,6 @@ import com.software.FindTeamMember.domain.User;
 import com.software.FindTeamMember.repository.UserRepos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,7 +21,7 @@ public class HomeController {
     @Autowired
     private UserRepos userRepos;
 
-    @RequestMapping("")
+    @RequestMapping("/")
     public ModelAndView home() {
         List<User> users = userRepos.findAll();
         Map param = new HashMap();
