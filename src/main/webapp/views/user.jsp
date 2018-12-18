@@ -10,9 +10,9 @@
 <html>
 <head>
     <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() %>/"/>
-    <title>$Title$</title>
+    <title>个人资料管理 - 找队友</title>
 </head>
 <body>
-$END$
+<h1>Hello World !</h1>
 </body>
 </html>
