@@ -33,7 +33,7 @@ public class User {
 
     @ManyToMany
     @JsonIgnore
-    private List<User> follower;
+    private List<User> attention;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="author")
     @JsonIgnore
