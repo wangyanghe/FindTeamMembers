@@ -40,8 +40,10 @@ public class HomeController {
     @RequestMapping("/")
     public ModelAndView home() {
         List<Post> posts = postService.findTenPosts(1);
+        List<String> themeContent = themeService.getHotTheme();
         Map param = new HashMap();
         param.put("posts", posts);
+        param.put("hotTheme",themeContent);
         return new ModelAndView("home", param);
     }
 
@@ -70,4 +72,5 @@ public class HomeController {
         postService.createPost(post);
         return "ok";
     }
+
 }

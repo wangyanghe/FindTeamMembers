@@ -15,7 +15,7 @@
     <title>home</title>
     <%@ include file="common/_include_css.jsp" %>
 </head>
-<body>
+<body class="front-body">
 <c:import url="common/_nav.jsp?act=home"/>
 <div class="front-inner">
     <div class="container">
@@ -68,7 +68,9 @@
             <div class="col-sm-3">
                 <div class="panel panel-default front-panel" style="margin-bottom:20px;">
                     <div class="panel-heading">热门主题</div>
-                    <div class="panel-body front-last-no-margin">内容1</div>
+                    <c:forEach items="${hotTheme}" var="hottheme">
+                        <div class="panel-body front-last-no-margin">${hottheme}</div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
