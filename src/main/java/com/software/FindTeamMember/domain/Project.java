@@ -19,6 +19,9 @@ public class Project {
 
     private String name;
 
+    @Column(columnDefinition = "text")
+    private String description;
+
     @ManyToOne
     @JoinColumn(name = "theme_id")
     private Theme theme;
