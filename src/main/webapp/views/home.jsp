@@ -50,7 +50,7 @@
                                         <h4 class="media-heading front-text-break">
                                             <a href="#" data-toggle="front-modal" data-size="modal-sm"
                                                data-href="">${post.author.userName}</a>
-                                            <span style="float: right;font-size: small">主题：${post.theme.content}</span>
+                                            <a href="theme/${post.theme.id}" style="float: right;font-size: small">主题：${post.theme.content}</a>
                                         </h4>
                                         <p class="front-text-break">${post.content}</p>
                                         <div>${post.createTime}</div>
@@ -79,7 +79,7 @@
                 <div class="panel panel-default front-panel" style="margin-bottom:20px;">
                     <div class="panel-heading">热门主题</div>
                     <c:forEach items="${hotTheme}" var="hottheme">
-                        <div class="panel-body front-last-no-margin">${hottheme}</div>
+                        <div class="panel-body front-last-no-margin"><a href="theme/${hottheme.id}">${hottheme.content}</a></div>
                     </c:forEach>
                 </div>
             </div>

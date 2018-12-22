@@ -5,4 +5,6 @@ package com.software.FindTeamMember.service;
  **/
 public interface ThemeNoticeService {
     void delete(int id);
+    void update(int id, String content);
+    void create(String content, int themeId);
 }

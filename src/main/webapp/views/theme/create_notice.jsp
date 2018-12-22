@@ -13,7 +13,7 @@
     <form>
         <div class="form-group">
             <label for="content" class="control-label col-sm-2">内容</label>
-            <textarea class="form-control" id="content" name="content">${param.content}</textarea>
+            <textarea class="form-control" id="content" name="content"></textarea>
         </div>
     </form>
 </div>
@@ -25,11 +25,11 @@
 
 <script>
     function submit() {
-        var noticeId = ${param.noticeId};
+        var themeId = ${param.themeId};
         var content = $("#content").val().trim();
-        $.post("/themeNotice/edit", {
+        $.post("/themeNotice/create", {
                 content: content,
-                noticeId: noticeId
+                themeId: themeId
             }, function (data) {
                 if (data == "ok") {
                     window.location.href = "/theme/${param.themeId}";

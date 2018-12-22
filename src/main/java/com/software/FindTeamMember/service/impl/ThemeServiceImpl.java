@@ -25,21 +25,20 @@ public class ThemeServiceImpl implements ThemeService {
     }
 
     @Override
-    public List<String> getHotTheme() {
+    public List<Theme> getHotTheme() {
         List<Theme> themes = themeRepos.findAll();
         Map hotTheme = new HashMap();
         for (Theme theme: themes) {
-            String content = theme.getContent();
+//            String content = theme.getContent();
             List<Post> post = theme.getPosts();
             int count = post.size();
-            hotTheme.put(content,count);
+            hotTheme.put(theme,count);
         }
-        List<Map.Entry<String, Integer>> entryList = new ArrayList<Map.Entry<String, Integer>>(
-                hotTheme.entrySet());
+        List<Map.Entry<Theme, Integer>> entryList = new ArrayList<>(hotTheme.entrySet());
         Collections.sort(entryList, new MapValueComparator());
 
-        List<String> themeContent = new ArrayList<>();
-        for (Map.Entry<String, Integer> item :
+        List<Theme> themeContent = new ArrayList<>();
+        for (Map.Entry<Theme, Integer> item :
                 entryList) {
             themeContent.add(item.getKey());
         }
@@ -53,9 +52,9 @@ public class ThemeServiceImpl implements ThemeService {
     }
 }
 
-class MapValueComparator implements Comparator<Map.Entry<String, Integer>> {
+class MapValueComparator implements Comparator<Map.Entry<Theme, Integer>> {
     @Override
-    public int compare(Map.Entry<String, Integer> me1, Map.Entry<String, Integer> me2) {
-        return me1.getValue().compareTo(me2.getValue());
+    public int compare(Map.Entry<Theme, Integer> me1, Map.Entry<Theme, Integer> me2) {
+        return me2.getValue().compareTo(me1.getValue());
     }
 }

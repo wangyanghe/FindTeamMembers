@@ -21,8 +21,8 @@
                 <div class="media-body">
                     <h4 class="front-text-break">${notice.content}
                         <div class="pull-right">
-                            <a href="javascript:void(0);" data-toggle="front-modal" data-title="编辑通知" data-href="view/theme/edit_notice.jsp?id=${notice.id}">编辑</a>
-                            <a href="themeNotice/delete?id=${notice.id}">删除</a>
+                            <a href="javascript:void(0);" data-toggle="front-modal" data-title="编辑通知" data-href="views/theme/edit_notice.jsp?noticeId=${notice.id}&themeId=${notice.theme.id}&content=${notice.content}">编辑</a>
+                            <a href="themeNotice/delete?id=${notice.id}&themeId=${notice.theme.id}">删除</a>
                         </div>
                     </h4>
 

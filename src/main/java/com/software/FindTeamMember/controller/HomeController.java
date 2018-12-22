@@ -42,7 +42,7 @@ public class HomeController {
     public ModelAndView home() {
 //        List<Post> posts = postService.findTenPosts(1);
         Page<Post> posts = postService.findPosts(0,10);
-        List<String> themeContent = themeService.getHotTheme();
+        List<Theme> themeContent = themeService.getHotTheme();
         Map param = new HashMap();
         param.put("posts", posts);
         param.put("hotTheme",themeContent);
@@ -53,7 +53,7 @@ public class HomeController {
     public ModelAndView home(@RequestParam("page") int page) {
 //        List<Post> posts = postService.findTenPosts(1);
         Page<Post> posts = postService.findPosts(page,10);
-        List<String> themeContent = themeService.getHotTheme();
+        List<Theme> themeContent = themeService.getHotTheme();
         Map param = new HashMap();
         param.put("posts", posts);
         param.put("hotTheme",themeContent);
