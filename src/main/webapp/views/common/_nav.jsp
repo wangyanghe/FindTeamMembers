@@ -18,7 +18,7 @@
             <ul class="nav navbar-nav">
                 <li id="home" class="${param.act == "home" ? "front-active" : ""}"><a href="">首页</a></li>
                 <li id="project" class="${param.act == "project" ? "front-active" : ""}"><a href="/project">项目</a></li>
-                <%--<li id="theme" class="${param.act == "project" ? "front-active" : ""}"><a href="/theme">项目</a></li>--%>
+                <li id="theme" class="${param.act == "theme" ? "front-active" : ""}"><a href="/theme">主题</a></li>
             </ul>
         </div>
         <div class="nav-right">

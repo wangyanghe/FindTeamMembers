@@ -9,4 +9,5 @@ import java.util.Map;
 public interface ThemeService {
     List<Theme> getAllTheme(int id);
     List<String> getHotTheme();
+    Theme getTheme(int id);
 }

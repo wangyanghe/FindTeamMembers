@@ -1,0 +1,679 @@
+
+#freeshare-hq1 img{
+    max-width: 100% !important;
+}
+#freeshare-hq1-content table{
+    display:block;
+    max-width: 100% !important;
+}
+#commentcont img{
+    max-width: 100% !important;
+}
+.deletePadding{
+    padding-right:0px;
+}
+/*
+    template.css
+*/
+
+.front-msg-badge{
+    background-color: #3778bc;
+}
+.front-search-box{
+    margin-top: 8px;
+}
+@media (min-width: 768px) {
+    .front-search-field {
+        display: block;
+        visibility: visible;
+    }
+    .front-search-mobile {
+        display: none;
+        visibility: hidden;
+    }
+    #freeshare-modal-sm{
+        width:600px !important;
+    }
+    #freeshare-modal-lg{
+        width: 800px !important;
+    }
+    #freeshare-modal-xs{
+        width: 300px !important;
+    }
+    #freeshare-modal-xxs{
+        width: 200px !important;
+    }
+    .scroll-panel{
+        height:auto;
+        max-height:300px;
+        overflow-y: auto;
+    }
+    .front-tab-content{
+        height:250px;
+        overflow-y: auto;
+        border-left:solid 1px #dddddd;
+        border-right:solid 1px #dddddd;
+        border-bottom:solid 1px #dddddd;
+    }
+    .front-center-block{
+        margin-top:100%;
+    }
+}
+
+@media (max-width: 767px) {
+    #freeshare-modal-sm{
+        width:21.5rem !important;
+        margin:0 auto !important;
+    }
+    #freeshare-modal-lg{
+        width: 25rem !important;
+        margin: 0 auto !important;
+    }
+    #freeshare-modal-xs{
+        width: 18rem !important;
+        margin: 10rem auto !important;
+    }
+    #freeshare-modal-xxs{
+        width: 18rem !important;
+        margin: 10rem auto !important;
+    }
+    .scroll-panel{
+        height:auto;
+        max-height:2rem;
+        overflow-y: auto;
+    }
+    .front-tab-content{
+        height:auto;
+        overflow-y: auto;
+        border-left:solid 1px #dddddd;
+        border-right:solid 1px #dddddd;
+        border-bottom:solid 1px #dddddd;
+    }
+    .front-center-block{
+        display:none;
+    }
+}
+.front-searchtips-active{
+    cursor: pointer;
+    background: #f3f3f3;
+}
+.front-no-padding{
+    padding: 0;
+}
+.front-search-options {
+    background-color:#f5f5f5
+}
+/*
+    common.css
+*/
+
+.front-text-overflow{
+    max-width:16em;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    overflow:hidden;
+}
+.front-no-padding-left, .front-no-padding-horizon{
+    padding-left: 0;
+}
+.front-no-padding-right, .front-no-padding-horizon{
+    padding-right: 0;
+}
+.front-panel-padding{
+    padding: 15px 0;
+}
+
+.front-text-break {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.front-overflow-visible {
+    overflow: visible;
+}
+.front-link-overflow{
+    word-break: break-all;
+}
+.front-label {
+    font-weight: normal;
+    padding-right: 0;
+}
+/*
+    home.css
+*/
+.img-avatar-50 {
+    width: 50px;
+    height: 50px;
+}
+.img-news {
+    max-width: 300px;
+    max-height: 120px;
+    margin-right: 10px;
+}
+.img-avatar-100 {
+    width: 100px;
+    height: 100px;
+}
+.front-level-badge{
+    background-color: #337ab7;
+}
+.front-resource-info{
+    margin-left: 13px;
+    margin-bottom: 10px;
+}
+.front-pic-field{
+    margin-bottom: 10px;
+}
+.front-pointer{
+    cursor: pointer !important;
+}
+.topic-field{
+    border: 1px solid #ccc;
+}
+.front-no-border{
+    border: 0;
+}
+.front-topic-bg{
+    background-color: #f3f3f3
+}
+.front-topic-padding{
+    padding: 5px 0;
+}
+.front-topic-info,.front-topic-group{
+    font-size: 12px;
+}
+.front-no-focus:focus{
+    border: none;
+    box-shadow: none;
+}
+.front-topic-op {
+    padding: 0;
+    background-color: #f3f3f3;
+}
+.front-topic-active {
+    background-color: #e7e7e7;
+}
+
+/*
+    modal.css
+*/
+
+.front-selectitem{
+    padding:3% 5% 0 5%;
+}
+
+.front-selectitem >span{
+    cursor:pointer;
+}
+
+.tips-footer{
+    height:45px;
+    padding:5px;
+}
+
+
+.panel-default{
+    border-radius:0 !important;
+}
+
+#freeshare-groupselected
+{
+    list-style-type:none;
+    cursor:default;
+    border-top: 1px solid #dddddd;
+}
+
+
+#freeshare-groupselected >li >a{
+    font-size: small;
+    cursor:pointer;
+}
+
+#freeshare-groupNum{
+    margin-bottom: 2%;
+}
+
+
+.checkbox_float_left{
+    float:left;
+    width: 48%;
+    padding-left: 3%;
+
+}
+
+
+/* @group dropdown-menu */
+.front-min-width{
+    min-width: 130px;
+}
+.front-mid-width{
+    min-width: 230px;
+}
+.front-suitable-margin{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+input[type="text"]{
+    border-radius:0 !important;
+}
+
+/* @group zTree*/
+.dTreeNode{
+    cursor:pointer;
+}
+
+#freeshare-memberselected
+{
+    list-style-type:none;
+    cursor:default;
+    border-top: 1px solid #dddddd;
+}
+
+#freeshare-memberselected >li{
+    margin: 3% 3% -1% -7%;
+}
+#freeshare-memberselected >li >a{
+    font-size: small;
+    cursor:pointer;
+}
+
+#freeshare-memberNum{
+    margin-bottom: 2%;
+}
+.freeshare-bottom-20{
+    margin-bottom: 20px;
+}
+.freeshare-bottom-5{
+    margin-bottom: 5px;
+}
+.freeshare-left-10{
+    margin-left: 10px;
+}.freeshare-top-5{
+     padding-top: 5px;
+ }
+/* @ 修改头像*/
+
+.front-imgbox{
+    float:left;
+    width:70px;
+    height:70px;
+    margin:18px;
+    cursor:pointer;
+    border:solid 1px #eee;
+}
+.front-imgbox img{
+    width:68px;
+    height:68px;
+}
+.front-imgbox-70{
+    float:left;
+    width:70px;
+    height:70px;
+    margin:18px;
+}
+.front-imgbox-70 img{
+    width:68px;
+    height:68px;
+    border:solid 1px #eee;
+}
+.front-imgbox-100{
+    float:left;
+    width:100px;
+    height:100px;
+    margin:18px;
+}
+
+.front-imgbox-100 img{
+    width:98px;
+    height:98px;
+    border:solid 1px #eee;
+}
+
+.front-imgbox-70 p,.front-imgbox-100 p{
+    text-align:center;
+}
+
+
+#freeshare-diyImg{
+    text-align:center;
+    padding:50px;
+}
+
+#freeshare-photo_1
+{
+    width:110px;
+    height:34px;
+    margin-top:-34px;
+    margin-left:112px;
+    z-index:100;
+    opacity:0;
+    cursor:pointer;
+}
+
+.tipmodal-warning{
+    color:#8a6d3b;
+}
+.tipmodal-danger{
+    color:#a94442;
+}
+.tipmodal-success{
+    color:#3c763d;
+}
+.tipmodal-info{
+    color:#31708f;
+}
+
+
+/*
+ * @控件    //引用插件，请不要随意更改类名或id名
+ */
+.recipients-tips {
+    position: absolute;
+    background: #fdfdfd;
+    z-index: 2147483647000000000000;
+    padding: 2px;
+    border: 1px solid #d5d9e0;
+    display: none;
+    margin: 0 2px 2px 0;
+}
+.recipients-tips > ul{
+    cursor: pointer;
+    list-style:none;
+    padding:0;
+    margin:0;
+
+}
+.recipients-tips > a{
+    cursor: pointer;
+}
+.greyletter, .greyletter:visited, .grayletter, .grayletter:visited {
+    color: #555!important;
+}
+
+
+
+/*
+ * 回到顶部和前往底部
+ */
+
+#backbottom {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font: 12px Arial,Helvetica,sans-serif normal;
+    line-height: 160%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+#backbottom a {
+    width: 50px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #bbb;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+#backbottom span {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 7px;
+    background: #ddd url(http://front.free4inno.com/css/images/down-arrow.png) no-repeat center center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+.lineheight{
+    line-height:74%;
+}
+
+#backtop {
+    position: fixed;
+    bottom: 130px;
+    right: 10px;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font: 12px Arial,Helvetica,sans-serif normal;
+    line-height: 160%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+#backtop a {
+    width: 50px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #bbb;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+#backtop span {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 7px;
+    background: #ddd url(http://front.free4inno.com/css/images/up-arrow.png) no-repeat center center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+
+
+/* 上传文件
+} */
+
+
+#freeshare-firstline{
+    padding-top:5px;
+}
+
+#freeshare-avatarfilelist tr{
+    height:30px !important;
+}
+
+#freeshare-file_1{
+    height:32px;
+    z-index:100000;
+    opacity: 0;
+}
+
+#freeshare-avatarinfo{
+    margin:0 auto;
+}
+
+#freeshare-file_1{
+    cursor:pointer;
+}
+
+#front-emailarea{
+    margin-top:10px;
+    resize: none;
+}
+
+
+.file_upload_highlight{
+    color: #ffffff;
+}
+
+#freeshare-emailboxtip{
+    font-size:0.6em;
+    margin-top:10px;
+}
+
+#freeshare-addemail{
+    margin-left:10px;
+}
+
+.automodal >a{
+    cursor: pointer;
+}
+
+
+/* 更多响应式布局 */
+@media (max-width: 767px) {
+    .openmore{
+        width:100%;
+        border-radius:0px;
+    }
+    .openmore > tr>td{
+        width:33.33%;
+        display:block;
+        border-radius:0px;
+        margin-left:0px;
+        border: 0px;
+    }
+}
+
+/* 首页轮播banner */
+.carousel-control.left,.carousel-control.right{
+    background-image:none;
+}
+/* 关闭新手指引 */
+#closeguide{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor:pointer;
+    color:#330
+
+}
+#closeguide:hover{
+    color:#000;
+
+}
+/* 水平按钮组 */
+@media (min-width: 1203px) {
+    .front-btn-group-home.collapse {
+        display: inline-block;
+        visibility: visible;
+    }
+
+    .home .front-toolbar-header {
+        display: inline-block;
+    }
+    .front-btn-group-home .btn + .btn {
+        margin-left: -1px;
+    }
+    .front-btn-group-home > .btn:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+    .front-btn-group-home > .btn:first-child {
+        margin-left: 0;
+    }
+    .front-btn-group-home > .btn:first-child:not(:last-child) {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .front-btn-group-home > .btn:last-child:not(:first-child) {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+    .navbar-toggle-home {
+        display: none;
+    }
+}
+
+/* 垂直按钮组 */
+@media (max-width: 1202px) {
+    .rank.collapse {
+        display:none;
+        visibility: hidden;
+    }
+    .front-btn-group-home {
+        margin-top: 10px;
+    }
+    .front-btn-group-home > .btn {
+        display: block;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+    .front-btn-group-home > .btn + .btn {
+        margin-top: -1px;
+        margin-left: 0;
+    }
+    .front-btn-group-home > .btn:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+    .front-btn-group-home > .btn:first-child:not(:last-child) {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .front-btn-group-home > .btn:last-child:not(:first-child) {
+        border-bottom-left-radius: 4px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+    .front-toolbar .front-toolbar-header  {
+        display: block;
+    }
+
+    .navbar-toggle-home {
+        position: relative;
+        float: right;
+        padding: 9px 10px;
+        margin-top: 8px;
+        margin-right: 15px;
+        margin-bottom: 8px;
+        background-color: transparent;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .navbar-toggle-home .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+    }
+    .navbar-toggle-home .icon-bar + .icon-bar {
+        margin-top: 4px;
+    }
+    .front-toolbar .navbar-toggle-home {
+        background-color: #fff;
+        border: 1px solid transparent;
+        border-color: #ccc;
+    }
+    .front-toolbar .navbar-toggle-home {
+        margin: 0;
+    }
+    .front-toolbar .navbar-toggle-home .icon-bar {
+        background-color: #888;
+    }
+    @media (min-width: 1203px){
+        .home .front-toolbar-header {
+            display: inline-block;
+        }
+    }
+    @media (max-width: 1202px){
+        .front-toolbar .front-toolbar-header  {
+            display: none;
+        }
+    }
+}
+
+
+
+

@@ -10,6 +10,7 @@ import com.software.FindTeamMember.service.PostService;
 import com.software.FindTeamMember.service.ThemeService;
 import com.software.FindTeamMember.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,7 +40,19 @@ public class HomeController {
 
     @RequestMapping("/")
     public ModelAndView home() {
-        List<Post> posts = postService.findTenPosts(1);
+//        List<Post> posts = postService.findTenPosts(1);
+        Page<Post> posts = postService.findPosts(0,10);
+        List<String> themeContent = themeService.getHotTheme();
+        Map param = new HashMap();
+        param.put("posts", posts);
+        param.put("hotTheme",themeContent);
+        return new ModelAndView("home", param);
+    }
+
+    @RequestMapping("/home")
+    public ModelAndView home(@RequestParam("page") int page) {
+//        List<Post> posts = postService.findTenPosts(1);
+        Page<Post> posts = postService.findPosts(page,10);
         List<String> themeContent = themeService.getHotTheme();
         Map param = new HashMap();
         param.put("posts", posts);

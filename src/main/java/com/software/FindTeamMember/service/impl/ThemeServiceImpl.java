@@ -46,6 +46,11 @@ public class ThemeServiceImpl implements ThemeService {
 
         return themeContent;
     }
+
+    @Override
+    public Theme getTheme(int id) {
+        return themeRepos.getOne(id);
+    }
 }
 
 class MapValueComparator implements Comparator<Map.Entry<String, Integer>> {

@@ -8,4 +8,4 @@
 
 <link rel="stylesheet" href="http://newfront.free4inno.com/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://newfront.free4inno.com/css/front.css">
-
+<link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/front.css">

@@ -1,6 +1,11 @@
 package com.software.FindTeamMember.service;
 
+import com.software.FindTeamMember.domain.Skill;
+import com.software.FindTeamMember.domain.Theme;
 import com.software.FindTeamMember.domain.User;
+import com.software.FindTeamMember.domain.UserSkill;
+
+import java.util.List;
 
 /**
  * created by wangzhi 2018-12-03 23:29
@@ -19,4 +24,18 @@ public interface UserService {
     User addOrUpdate(User user);
 
     User get(int id);
+
+    List<UserSkill> getSkill(int id);
+
+    List<User> getAttention(int id);
+
+    List<User> getAllAttention(int id);
+
+    List<User> getFans(int id);
+
+    List<User> getFriends(int id);
+
+    List<Skill> getNeed(int id);
+
+    List<Theme> getTheme(int id);
 }

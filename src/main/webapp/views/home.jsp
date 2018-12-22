@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div id="newscontainer">
-                    <c:forEach items="${posts}" var="post">
+                    <c:forEach items="${posts.content}" var="post">
                         <div class="panel panel-default front-panel" style="margin-bottom:20px;">
                             <div class="panel-body front-news-panel">
                                 <div class="media">
@@ -56,13 +56,23 @@
                                         <div>${post.createTime}</div>
                                     </div>
                                 </div>
-                                <%--<div class="btn-group front-news-op">--%>
+                                    <%--<div class="btn-group front-news-op">--%>
                                     <%--<a href="" class="btn btn-default"><span--%>
-                                            <%--class="glyphicon glyphicon-plus"></span>关注此人</a>--%>
-                                <%--</div>--%>
+                                    <%--class="glyphicon glyphicon-plus"></span>关注此人</a>--%>
+                                    <%--</div>--%>
                             </div>
                         </div>
                     </c:forEach>
+                    <div id="page">
+                        <div class="text-center">
+                            <ul class="pagination">
+                                <li class="disabled"><a aria-label="Previous">&laquo;</a></li>
+                                <li><a aria-label="PreMore">...</a></li>
+                                <li class="disabled"><a aria-label="Next">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="col-sm-3">
@@ -79,6 +89,12 @@
 </body>
 <%@ include file="common/_include_js.jsp" %>
 <script>
+    $("#page").html($.getDivPageHtml(${posts.pageable.pageNumber} + 1, ${posts.totalPages}, "getPosts"));
+
+    function getPosts(page) {
+        window.location.href="/home?page=" + (page-1)
+    }
+
     function modal() {
         if ($('#postfield').hasClass("has-error")) {
             $('#postfield').removeClass("has-error");
