@@ -1,8 +1,9 @@
 package com.software.FindTeamMember.service.impl;
 
+import com.software.FindTeamMember.domain.Project;
+import com.software.FindTeamMember.domain.User;
 import com.software.FindTeamMember.domain.Skill;
 import com.software.FindTeamMember.domain.Theme;
-import com.software.FindTeamMember.domain.User;
 import com.software.FindTeamMember.domain.UserSkill;
 import com.software.FindTeamMember.repository.UserRepos;
 import com.software.FindTeamMember.service.UserService;
@@ -80,5 +81,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Theme> getTheme(int id) {
         return userRepos.getOne(id).getThemes();
+    }
+
+    @Override
+    public List<Project> getProjects(int id) {
+        User user = userRepos.getOne(id);
+        List<Project> projects = user.getProjects();
+        return projects;
     }
 }

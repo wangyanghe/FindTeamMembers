@@ -2,6 +2,7 @@ package com.software.FindTeamMember.service;
 
 import com.software.FindTeamMember.domain.Skill;
 import com.software.FindTeamMember.domain.Theme;
+import com.software.FindTeamMember.domain.Project;
 import com.software.FindTeamMember.domain.User;
 import com.software.FindTeamMember.domain.UserSkill;
 
@@ -38,4 +39,6 @@ public interface UserService {
     List<Skill> getNeed(int id);
 
     List<Theme> getTheme(int id);
+
+    List<Project> getProjects(int id);
 }
