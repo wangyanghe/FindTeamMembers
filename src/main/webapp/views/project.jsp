@@ -21,7 +21,7 @@
     <div class="container">
         <div class="front-toolbar other">
             <div class="text-right">
-                <a class="btn btn-primary" href="/project/newProject">新建项目</a>
+                <a href="javascript:void(0)" data-toggle="front-modal" data-title="新建" class="btn btn-primary" data-href="/project/newProject">新建项目</a>
             </div>
         </div>
         <div id="show-data-area">
@@ -63,7 +63,6 @@
                     </div>
                 </div>
                 <%--<a>${project.name}</a>--%>
-                <%--<a>${project.description}</a>--%>
 
             </c:forEach>
         </div>
@@ -72,7 +71,4 @@
 <c:import url="common/_footer.jsp"/>
 </body>
 <%@ include file="common/_include_js.jsp" %>
-<script src="http://newfront.free4inno.com/js/jquery/jquery.min.js"></script>
-<script src="http://newfront.free4inno.com/bootstrap/js/bootstrap.min.js"></script>
-<script src="http://newfront.free4inno.com/js/plugin/front.js"></script>
 </html>

@@ -37,6 +37,10 @@
                 <div style="word-wrap:break-word;word-break: break-all;">
                     ${project.description}
                 </div>
+                <div >
+                    <a class="front-pointer" data-toggle="front-modal" style="cursor:pointer"
+                       data-href="/views/project/editProject.jsp?id=${project.id}&name=${project.name}&description=${project.description}" data-title="编辑项目信息" data-size="modal-md">编辑项目信息</a>
+                </div>
             </div>
         </div>
     </div>
@@ -69,9 +73,6 @@
 <c:import url="common/_footer.jsp"/>
 </body>
 <%@ include file="common/_include_js.jsp" %>
-<script src="http://newfront.free4inno.com/js/jquery/jquery.min.js"></script>
-<script src="http://newfront.free4inno.com/bootstrap/js/bootstrap.min.js"></script>
-<script src="http://newfront.free4inno.com/js/plugin/front.js"></script>
 <script>
     $("#notice").click(function () {
         $.get(
@@ -82,7 +83,7 @@
             }
         )
     });
-    $("#posts").click(function () {
+    $("#member").click(function () {
         $.get(
             "project/member",
             {id: ${project.id}},
