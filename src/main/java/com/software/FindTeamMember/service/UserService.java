@@ -41,4 +41,8 @@ public interface UserService {
     List<Theme> getTheme(int id);
 
     List<Project> getProjects(int id);
+
+    void attention(int id, int anotherId);
+
+    void disAttention(int id, int anotherId);
 }

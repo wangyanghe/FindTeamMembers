@@ -16,10 +16,6 @@
             无
         </c:when>
         <c:otherwise>
-            <div class="col-sm-12" style=" padding-top: 15px;">
-                <label class="col-md-2 control-label front-label text-right">技能名</label>
-                <label class="col-md-10 control-label front-label">熟悉程度</label>
-            </div>
             <c:forEach items="${need}" var="skill">
                 <div class="col-sm-12" style=" padding-top: 15px;">
                     <label class="col-md-2 control-label front-label text-right">${skill.name}</label>

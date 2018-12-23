@@ -58,7 +58,7 @@
                         class="glyphicon glyphicon-user"></span>&nbsp;相互关注
                 </label>
             </div>
-            <a href="javascript:void(0)" onclick="" class="btn btn-primary pull-right">编辑信息</a>
+            <a href="user/toEdit" class="btn btn-primary pull-right">编辑信息</a>
         </div>
         <div class="panel panel-default front-panel">
 
@@ -68,9 +68,8 @@
 
         </div>
     </div>
+    <c:import url="common/_footer.jsp"/>
 </div>
-</div>
-
 </body>
 <%@ include file="common/_include_js.jsp" %>
 <script>

@@ -50,6 +50,11 @@ public class ThemeServiceImpl implements ThemeService {
     public Theme getTheme(int id) {
         return themeRepos.getOne(id);
     }
+
+    @Override
+    public void save(Theme theme) {
+        themeRepos.save(theme);
+    }
 }
 
 class MapValueComparator implements Comparator<Map.Entry<Theme, Integer>> {

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -62,6 +63,14 @@ public class ThemeController {
         List<Post> posts = theme.getPosts();
         param.put("posts", posts);
         return new ModelAndView("theme/theme_post", param);
+    }
 
+    @RequestMapping("/edit")
+    @ResponseBody
+    public String edit(@RequestParam("themeId") int themeId, @RequestParam("content") String content){
+        Theme theme = themeService.getTheme(themeId);
+        theme.setContent(content);
+        themeService.save(theme);
+        return "ok";
     }
 }

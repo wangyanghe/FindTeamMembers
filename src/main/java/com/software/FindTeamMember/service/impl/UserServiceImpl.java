@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User addOrUpdate(User user) {
-        return null;
+        return userRepos.save(user);
     }
 
     @Override
@@ -86,7 +86,23 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Project> getProjects(int id) {
         User user = userRepos.getOne(id);
-        List<Project> projects = user.getProjects();
-        return projects;
+        return user.getProjects();
+    }
+
+    @Override
+    public void attention(int id, int anotherId) {
+        User user = userRepos.getOne(id);
+        User user1 = new User();
+        user1.setId(anotherId);
+        user.getAttention().add(user1);
+        userRepos.save(user);
+    }
+
+    @Override
+    public void disAttention(int id, int anotherId) {
+        User user = userRepos.getOne(id);
+        User user1 = userRepos.getOne(anotherId);
+        user.getAttention().remove(user1);
+        userRepos.save(user);
     }
 }

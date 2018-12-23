@@ -12,7 +12,7 @@
 <html>
 <head>
     <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() %>/"/>
-    <title>home</title>
+    <title>首页 - 找队友</title>
     <%@ include file="common/_include_css.jsp" %>
 </head>
 <body class="front-body">
@@ -86,6 +86,7 @@
         </div>
     </div>
     <c:import url="common/_footer.jsp"/>
+</div>
 </body>
 <%@ include file="common/_include_js.jsp" %>
 <script>

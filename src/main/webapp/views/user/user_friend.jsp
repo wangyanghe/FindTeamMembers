@@ -31,10 +31,9 @@
                                         ${user.userName}
                                 </a>
                                 <div class="pull-right">
-                                    <a href="">邀请加入项目</a>
-                                    <a href="">取消关注</a>
+                                    <a href="javascript:void(0);" data-toggle="front-modal" data-title="选择项目" data-href="user/preInvite?userId=${user.id}">邀请加入项目</a>
+                                    <a href="user/disAttention?userId=${user.id}">取消关注</a>
                                 </div>
-
                             </h5>
                             <div class="front-text-overflow">
                                     ${user.resume}

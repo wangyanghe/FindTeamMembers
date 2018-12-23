@@ -31,7 +31,7 @@
                                         ${user.userName}
                                 </a>
                                 <div class="pull-right">
-                                    <a href="">关注</a>
+                                    <a href="user/addAttention?userId=${user.id}">关注</a>
                                 </div>
                             </h5>
                             <div class="front-text-overflow">

@@ -40,7 +40,7 @@
                                                            href="mailto:${theme.author.email}">&lt;${theme.author.email}&gt;</a></div>
                         <div >
                             <a class="front-pointer" data-toggle="front-modal" style="cursor:pointer"
-                               data-href="" data-title="编辑主题信息" data-size="modal-md">编辑主题信息</a>
+                               data-href="/views/theme/edit_theme.jsp?content=${theme.content}&themeId=${theme.id}" data-title="编辑主题信息" data-size="modal-md">编辑主题信息</a>
                         </div>
                     </div>
 
@@ -72,6 +72,7 @@
             <c:import url="theme/theme_admin_notice.jsp"/>
         </div>
     </div>
+    <c:import url="common/_footer.jsp"/>
 </div>
 
 

@@ -9,4 +9,5 @@ public interface ProjectService {
     List<User> getMembers(int project_id);
     void createProject(Project project);
     Project getProject(int id);
+    void addMember(int id, int memberId);
 }

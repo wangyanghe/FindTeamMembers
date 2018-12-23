@@ -10,4 +10,5 @@ public interface ThemeService {
     List<Theme> getAllTheme(int id);
     List<Theme> getHotTheme();
     Theme getTheme(int id);
+    void save(Theme theme);
 }

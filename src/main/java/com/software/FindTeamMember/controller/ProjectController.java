@@ -9,14 +9,12 @@ import com.software.FindTeamMember.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.software.FindTeamMember.service.ThemeService;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 /**
@@ -28,8 +26,7 @@ import java.util.Map;
 public class ProjectController {
     @Autowired
     private ProjectService projectService;
-    @Autowired
-    private ProjectRepos projectRepos;
+
     @Autowired
     private UserService userService;
     @Autowired
@@ -89,6 +86,7 @@ public class ProjectController {
         projectService.createProject(project);
         return "ok";
     }
+
     @RequestMapping("/postProject")
     @ResponseBody
     public String postProject(@RequestParam("name") String name,@RequestParam("description") String description,@RequestParam("theme_id") int theme_id,HttpSession session){
@@ -105,6 +103,13 @@ public class ProjectController {
         project.setMembers(member);
         project.setTheme(theme);
         projectService.createProject(project);
+        return "ok";
+    }
+
+    @RequestMapping(value = "/invite", method = RequestMethod.POST)
+    @ResponseBody
+    public String invite(@RequestParam("memberId") int memberId, @RequestParam("projectId") int projectId) {
+        projectService.addMember(projectId, memberId);
         return "ok";
     }
 }

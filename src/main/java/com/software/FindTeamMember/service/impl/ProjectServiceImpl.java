@@ -37,5 +37,14 @@ public class ProjectServiceImpl  implements ProjectService{
     public Project getProject(int id) {
         return projectRepos.getOne(id);
     }
+
+    @Override
+    public void addMember(int id, int memberId) {
+        Project project = projectRepos.getOne(id);
+        User user = new User();
+        user.setId(memberId);
+        project.getMembers().add(user);
+        projectRepos.save(project);
+    }
 }
 

@@ -43,10 +43,10 @@ public class User {
     @JsonIgnore
     private List<Post> posts;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany(mappedBy = "user")
     private List<UserSkill> userSkills;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "user_need")
     private List<Skill> needSkills;
 
