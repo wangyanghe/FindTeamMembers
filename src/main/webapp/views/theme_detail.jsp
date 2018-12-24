@@ -39,8 +39,6 @@
                             发布人：${theme.author.userName}<a style="color: #8c8c8c; font-size: small"
                                                            href="mailto:${theme.author.email}">&lt;${theme.author.email}&gt;</a></div>
                         <div >
-                            <a class="front-pointer" data-toggle="front-modal" style="cursor:pointer"
-                               data-href="" data-title="编辑主题信息" data-size="modal-md">编辑主题信息</a>
                         </div>
                     </div>
 
@@ -71,6 +69,7 @@
             <c:import url="theme/theme_notice.jsp"/>
         </div>
     </div>
+    <c:import url="common/_footer.jsp"/>
 </div>
 
 

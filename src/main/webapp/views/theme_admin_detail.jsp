@@ -66,7 +66,7 @@
                         class="glyphicon glyphicon-comment"></span>&nbsp;帖子
                 </label>
             </div>
-            <a href="javascript:void(0)" data-toggle="front-modal" data-title="" data-href="views/theme/create_notice.jsp?themeId=${theme.id}" class="btn btn-primary pull-right"></a>
+            <a href="javascript:void(0)" data-toggle="front-modal" data-title="" data-href="views/theme/create_notice.jsp?themeId=${theme.id}" class="btn btn-primary pull-right">发布通知</a>
         </div>
         <div id="tab">
             <c:import url="theme/theme_admin_notice.jsp"/>

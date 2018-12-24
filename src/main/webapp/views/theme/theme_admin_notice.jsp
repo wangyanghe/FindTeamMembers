@@ -19,12 +19,12 @@
         <div class="panel-body front-news-panel">
             <div class="media">
                 <div class="media-body">
-                    <h4 class="front-text-break">${notice.content}
+                    <h5 class="front-text-break">${notice.content}
                         <div class="pull-right">
                             <a href="javascript:void(0);" data-toggle="front-modal" data-title="编辑通知" data-href="views/theme/edit_notice.jsp?noticeId=${notice.id}&themeId=${notice.theme.id}&content=${notice.content}">编辑</a>
                             <a href="themeNotice/delete?id=${notice.id}&themeId=${notice.theme.id}">删除</a>
                         </div>
-                    </h4>
+                    </h5>
 
                     <div>${notice.createTime}</div>
                 </div>

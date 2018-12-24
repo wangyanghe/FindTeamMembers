@@ -12,7 +12,7 @@ import java.io.IOException;
 @WebFilter(urlPatterns = "/*", filterName = "loginFilter")
 public class LoginFilter implements Filter {
 
-    private String[] excludedMapping = {"/landing", "/login", "/image/", "/static/"};
+    private String[] excludedMapping = {"/landing", "/login", "/image/", "/static/", "/toRegister", "/register"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

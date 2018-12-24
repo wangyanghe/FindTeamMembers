@@ -48,8 +48,7 @@
                                 <div class="media">
                                     <div class="media-body">
                                         <h4 class="media-heading front-text-break">
-                                            <a href="#" data-toggle="front-modal" data-size="modal-sm"
-                                               data-href="">${post.author.userName}</a>
+                                            <a href="user/${post.author.id}">${post.author.userName}</a>
                                             <a href="theme/${post.theme.id}" style="float: right;font-size: small">主题：${post.theme.content}</a>
                                         </h4>
                                         <p class="front-text-break">${post.content}</p>

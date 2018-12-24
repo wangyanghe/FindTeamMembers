@@ -35,7 +35,7 @@
                                     <div class="media front-overflow-visible">
                                         <div class="media-left">
                                             <a>
-                                                <img src="static/img/group.png">
+                                                <img class="media-object img-circle img-avatar-50" src="image/group.png">
                                             </a>
                                         </div>
                                         <div class="media-body front-overflow-visible">
@@ -66,9 +66,10 @@
 
             </c:forEach>
         </div>
+
     </div>
+    <c:import url="common/_footer.jsp"/>
 </div>
-<c:import url="common/_footer.jsp"/>
 </body>
 <%@ include file="common/_include_js.jsp" %>
 </html>

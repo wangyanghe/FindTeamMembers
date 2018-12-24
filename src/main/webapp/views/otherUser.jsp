@@ -12,7 +12,7 @@
 <html>
 <head>
     <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() %>/"/>
-    <title>个人资料管理 - 找队友</title>
+    <title>${user.userName} - 找队友</title>
     <%@ include file="common/_include_css.jsp" %>
 </head>
 <body class="front-body">
@@ -41,26 +41,13 @@
                     <input type="radio" name="options" autocomplete="off" checked><span
                         class="glyphicon glyphicon-king"></span>&nbsp;需求
                 </label>
-                <c:if test="${root}">
-                    <label class="btn btn-default" id="my_theme" style="box-shadow: none">
-                        <input type="radio" name="options" autocomplete="off" checked><span
-                            class="glyphicon glyphicon-heart"></span>&nbsp;我的主题
-                    </label>
-                </c:if>
-                <label class="btn btn-default" id="attention" style="box-shadow: none">
-                    <input type="radio" name="options" autocomplete="off" checked><span
-                        class="glyphicon glyphicon-eye-open"></span>&nbsp;关注
-                </label>
-                <label class="btn btn-default" id="fans" style="box-shadow: none">
-                    <input type="radio" name="options" autocomplete="off" checked><span
-                        class="glyphicon glyphicon-star"></span>&nbsp;粉丝
-                </label>
-                <label class="btn btn-default" id="friend" style="box-shadow: none">
-                    <input type="radio" name="options" autocomplete="off" checked><span
-                        class="glyphicon glyphicon-user"></span>&nbsp;相互关注
-                </label>
             </div>
-            <a href="user/toEdit" class="btn btn-primary pull-right">编辑信息</a>
+            <c:if test="${attention == false}">
+                <a href="user/addAttention1?userId=${user.id}" class="btn btn-primary pull-right">关注</a>
+            </c:if>
+            <c:if test="${attention}">
+                <a href="user/disAttention1?userId=${user.id}" class="btn btn-primary pull-right">取消关注</a>
+            </c:if>
         </div>
         <div class="panel panel-default front-panel">
 
@@ -105,45 +92,6 @@ $("#need").click(function () {
         }
     )
 });
-$("#attention").click(function () {
-    console.log("click info");
-    $.get(
-        "user/attention",
-        {},
-        function (data) {
-            $("#tab").html(data)
-        }
-    )
-});
-$("#fans").click(function () {
-    console.log("click info");
-    $.get(
-        "user/fans",
-        {},
-        function (data) {
-            $("#tab").html(data)
-        }
-    )
-});
-$("#my_theme").click(function () {
-    console.log("click info");
-    $.get(
-        "user/theme",
-        {},
-        function (data) {
-            $("#tab").html(data)
-        }
-    )
-});
-$("#friend").click(function () {
-    console.log("click info");
-    $.get(
-        "user/friend",
-        {},
-        function (data) {
-            $("#tab").html(data)
-        }
-    )
-})
+
 </script>
 </html>

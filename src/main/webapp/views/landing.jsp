@@ -27,7 +27,7 @@
         </div>
         <%--导航栏右侧区域--%>
         <div class="nav-right">
-            <div class="area area-media" style="font-size: 14px">您好，请先登录！或<a href="register">注册</a></div>
+            <div class="area area-media" style="font-size: 14px">您好，请先登录！或<a href="toRegister">注册</a></div>
         </div>
     </div>
 </nav>
@@ -37,7 +37,7 @@
             <div class="col-md-9">
                 <div class="panel panel-default front-panel" style="background: #e7e7e7; border: 0;">
                     <div class="panel-body" style="height: 100%;padding: 0px;">
-                        <img src="image/banner.png" class="change-img"  style="width: 120%;max-width: 100%; display: block;">
+                        <img src="image/banner.jpg" class="change-img"  style="width: 120%;max-width: 100%; display: block;">
                         <%--height: 271px;width: 847.5px;--%>
                     </div>
                 </div>

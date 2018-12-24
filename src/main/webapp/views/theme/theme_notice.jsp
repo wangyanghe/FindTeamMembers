@@ -19,7 +19,9 @@
         <div class="panel-body front-news-panel">
             <div class="media">
                 <div class="media-body">
-                    <p class="front-text-break">${notice.content}</p>
+                    <h5 class="front-text-break">${notice.content}
+                    </h5>
+
                     <div>${notice.createTime}</div>
                 </div>
             </div>

@@ -6,6 +6,10 @@ import com.software.FindTeamMember.repository.PostRepos;
 import com.software.FindTeamMember.repository.ThemeRepos;
 import com.software.FindTeamMember.service.ThemeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -49,6 +53,13 @@ public class ThemeServiceImpl implements ThemeService {
     @Override
     public Theme getTheme(int id) {
         return themeRepos.getOne(id);
+    }
+
+    @Override
+    public Page<Theme> getThemes(int page, int size) {
+        Sort sort = new Sort(Sort.Direction.DESC, "id");
+        Pageable pageable = PageRequest.of(page, size, sort);
+        return themeRepos.findAll(pageable);
     }
 
     @Override

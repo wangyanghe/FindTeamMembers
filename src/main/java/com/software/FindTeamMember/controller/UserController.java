@@ -42,14 +42,33 @@ public class UserController {
         int userId = (int) session.getAttribute("userid");
         Map param = new HashMap();
         param.put("user", userService.get(userId));
+        if (userId == 1) {
+            param.put("root", true);
+        } else {
+            param.put("root", false);
+        }
         return new ModelAndView("user", param);
     }
 
     @RequestMapping("/{userId}")
-    public ModelAndView user(@PathVariable int userId){
+    public ModelAndView user(@PathVariable int userId, HttpSession session) {
+        int myId = (int) session.getAttribute("userid");
+        if (userId == myId) {
+            return new ModelAndView("redirect:/user");
+        }
         Map param = new HashMap();
-        param.put("user", userService.get(userId));
-        return new ModelAndView("user", param);
+        User user = userService.get(userId);
+        User my = userService.get(myId);
+        List<User> users = my.getAttention();
+        param.put("attention", false);
+        for (User aUser : users) {
+            if (aUser.getId() == userId) {
+                param.put("attention", true);
+            }
+        }
+        param.put("user", user);
+
+        return new ModelAndView("otherUser", param);
     }
 
     @RequestMapping("skill")
@@ -131,6 +150,20 @@ public class UserController {
         return new ModelAndView("redirect:/user");
     }
 
+    @RequestMapping("addAttention1")
+    public ModelAndView attention1(@RequestParam("userId") int memberId, HttpSession session) {
+        int userId = (int) session.getAttribute("userid");
+        userService.attention(userId, memberId);
+        return new ModelAndView("redirect:/user/" + memberId);
+    }
+
+    @RequestMapping("disAttention1")
+    public ModelAndView disAttention1(@RequestParam("userId") int memberId, HttpSession session) {
+        int userId = (int) session.getAttribute("userid");
+        userService.disAttention(userId, memberId);
+        return new ModelAndView("redirect:/user/" + memberId);
+    }
+
     @RequestMapping("toEdit")
     public ModelAndView toEdit(HttpSession session) {
         int userId = (int) session.getAttribute("userid");
@@ -145,10 +178,10 @@ public class UserController {
     @RequestMapping("update")
     @ResponseBody
     public String update(@RequestParam("userName") String userName,
-                               @RequestParam(value = "resume", required = false) String resume,
-                               @RequestParam(value = "email", required = false) String email,
-                               @RequestParam(value = "skills", required = false) String skills,
-                               @RequestParam(value = "need[]",required = false) int[] need, HttpSession session) {
+                         @RequestParam(value = "resume", required = false) String resume,
+                         @RequestParam(value = "email", required = false) String email,
+                         @RequestParam(value = "skills", required = false) String skills,
+                         @RequestParam(value = "need[]", required = false) int[] need, HttpSession session) {
         int userId = (int) session.getAttribute("userid");
         User user = userService.get(userId);
         user.setUserName(userName);
@@ -158,14 +191,14 @@ public class UserController {
         user.setEmail(email);
 
         List<UserSkill> userSkills = user.getUserSkills();
-        for (UserSkill userSkill: userSkills) {
+        for (UserSkill userSkill : userSkills) {
             userSkillService.delete(userSkill.getId());
         }
         user.setUserSkills(null);
 
         List<Skill> needSkills = new ArrayList<>();
         if (need != null) {
-            for (int needId:need) {
+            for (int needId : need) {
                 Skill skill = new Skill();
                 skill.setId(needId);
                 needSkills.add(skill);
@@ -177,12 +210,12 @@ public class UserController {
         try {
             Map<String, String> skills1;
             skills1 = mapper.readValue(skills, Map.class);
-            for (Map.Entry entry: skills1.entrySet()) {
+            for (Map.Entry entry : skills1.entrySet()) {
                 UserSkill userSkill = new UserSkill();
                 Skill aSkill = new Skill();
-                aSkill.setId(Integer.valueOf((String)entry.getKey()));
+                aSkill.setId(Integer.valueOf((String) entry.getKey()));
                 userSkill.setSkill(aSkill);
-                userSkill.setFamiliarity(Integer.valueOf((String)entry.getValue()));
+                userSkill.setFamiliarity(Integer.valueOf((String) entry.getValue()));
                 userSkill.setUser(user);
                 userSkillService.addOrUpdate(userSkill);
             }

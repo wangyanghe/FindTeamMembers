@@ -27,7 +27,7 @@
                         </div>
                         <div class="media-body">
                             <h5 class="media-heading">
-                                <a href="#">
+                                <a href="user/${user.id}">
                                         ${user.userName}
                                 </a>
                                 <div class="pull-right">
