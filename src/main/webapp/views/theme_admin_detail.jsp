@@ -24,7 +24,8 @@
                 <div class="media" style="padding-left: 5px">
                     <div class="media-left text-center">
                         <p>
-                            <img id="group-avatar" class="media-object img-circle img-avatar-100" src="../image/theme.png">
+                            <img id="group-avatar" class="media-object img-circle img-avatar-100"
+                                 src="../image/theme.png">
                         </p>
 
                         <p>
@@ -36,11 +37,13 @@
                             <span id="myThemeName">${theme.content}</span>
                         </h3>
                         <div id="author" style="word-wrap:break-word;word-break:break-all;padding-top: 2px;">
-                            发布人：${theme.author.userName}<a style="color: #8c8c8c; font-size: small"
-                                                           href="mailto:${theme.author.email}">&lt;${theme.author.email}&gt;</a></div>
-                        <div >
+                            <a href="user/${theme.author.id}">发布人：${theme.author.userName}</a>
+                            <a style="color: #8c8c8c; font-size: small"
+                               href="mailto:${theme.author.email}">&lt;${theme.author.email}&gt;</a></div>
+                        <div>
                             <a class="front-pointer" data-toggle="front-modal" style="cursor:pointer"
-                               data-href="/views/theme/edit_theme.jsp?content=${theme.content}&themeId=${theme.id}" data-title="编辑主题信息" data-size="modal-md">编辑主题信息</a>
+                               data-href="/views/theme/edit_theme.jsp?content=${theme.content}&themeId=${theme.id}"
+                               data-title="编辑主题信息" data-size="modal-md">编辑主题信息</a>
                         </div>
                     </div>
 
@@ -66,7 +69,8 @@
                         class="glyphicon glyphicon-comment"></span>&nbsp;帖子
                 </label>
             </div>
-            <a href="javascript:void(0)" data-toggle="front-modal" data-title="" data-href="views/theme/create_notice.jsp?themeId=${theme.id}" class="btn btn-primary pull-right">发布通知</a>
+            <a href="javascript:void(0)" data-toggle="front-modal" data-title=""
+               data-href="views/theme/create_notice.jsp?themeId=${theme.id}" class="btn btn-primary pull-right">发布通知</a>
         </div>
         <div id="tab">
             <c:import url="theme/theme_admin_notice.jsp"/>

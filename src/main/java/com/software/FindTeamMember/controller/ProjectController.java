@@ -42,7 +42,7 @@ public class ProjectController {
 
     @RequestMapping("/detail")
     public ModelAndView detail(@RequestParam("id") int projectId, HttpSession session){
-            Project project = projectService.getProject(projectId);
+        Project project = projectService.getProject(projectId);
         Map param = new HashMap();
         param.put("project",project);
         List<User> members = project.getMembers();
@@ -51,6 +51,12 @@ public class ProjectController {
         param.put("notices",notices);
         String name = project.getName();
         param.put("name",name);
+        int userId = (int) session.getAttribute("userid");
+        for (User user : members){
+            if (user.getId() == userId) {
+                return new ModelAndView("projectAdminDetail",param);
+            }
+        }
         return new ModelAndView("projectDetail",param);
     }
 
@@ -67,6 +73,13 @@ public class ProjectController {
        Map param = new HashMap();
         List<ProjectNotice> notices = project.getNotices();
         param.put("notices",notices);
+        int userId = (int) session.getAttribute("userid");
+        List<User> members = project.getMembers();
+        for (User user : members){
+            if (user.getId() == userId) {
+                return new ModelAndView("project/project_admin_notice",param);
+            }
+        }
         return new ModelAndView("project/project_notice",param);
     }
     @RequestMapping("/member")

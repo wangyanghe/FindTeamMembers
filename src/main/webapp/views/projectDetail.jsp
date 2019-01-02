@@ -19,56 +19,54 @@
 <body class="front-body">
 <c:import url="common/_nav.jsp?act=project"/>
 <div class="front-inner front-inner-media">
-<div class="container">
-    <div>
-        <div class="media">
-            <div class="media-left text-center">
-                <p>
-                  <img id = "group-avatar" class="media-object img-circle img-avatar-100" src="static/img/group.png">
-                </p>
-                <p>
-                    <!-- 这个p标签的作用是保持上下间距一致 -->
-                </p>
-            </div>
-            <div class="media-body media-middle" >
-                <h4 class="media-heading">
-                    <span>${project.name}</span>
-                </h4>
-                <div style="word-wrap:break-word;word-break: break-all;">
-                    ${project.description}
+    <div class="container">
+        <div>
+            <div class="media">
+                <div class="media-left text-center">
+                    <p>
+                        <img id="group-avatar" class="media-object img-circle img-avatar-100" src="image/group.png">
+                    </p>
+                    <p>
+                        <!-- 这个p标签的作用是保持上下间距一致 -->
+                    </p>
                 </div>
-                <div >
-                    <a class="front-pointer" data-toggle="front-modal" style="cursor:pointer"
-                       data-href="/views/project/editProject.jsp?id=${project.id}&name=${project.name}&description=${project.description}" data-title="编辑项目信息" data-size="modal-md">编辑项目信息</a>
+                <div class="media-body media-middle">
+                    <h4 class="media-heading">
+                        <span>${project.name}</span>
+                    </h4>
+                    <div style="word-wrap:break-word;word-break: break-all;">
+                        ${project.description}
+                    </div>
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-<div class="front-toolbar other">
-    <div class="front-toolbar-header clearfix">
-        <button type="button" class="front-toolbar-toggle navbar-toggle" data-toggle="collapse"
-                data-target="#freeshare-group" aria-expanded="false" aria-controls="freeshare-group">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+        <div class="front-toolbar other">
+            <div class="front-toolbar-header clearfix">
+                <button type="button" class="front-toolbar-toggle navbar-toggle" data-toggle="collapse"
+                        data-target="#freeshare-group" aria-expanded="false" aria-controls="freeshare-group">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="freeshare-group" class="front-btn-group collapse" data-toggle="buttons">
+                <label class="btn btn-default active" id="notice" style="box-shadow: none">
+                    <input type="radio" name="options" autocomplete="off" checked><span
+                        class="glyphicon glyphicon-bullhorn"></span>&nbsp;通知
+                </label>
+                <label class="btn btn-default" id="member" style="box-shadow: none">
+                    <input type="radio" name="options" autocomplete="off" checked><span
+                        class="glyphicon glyphicon-comment"></span>&nbsp;成员
+                </label>
+            </div>
+        </div>
+        <div id="tab">
+            <c:import url="project/project_notice.jsp"/>
+        </div>
     </div>
-    <div id="freeshare-group" class="front-btn-group collapse" data-toggle="buttons">
-        <label class="btn btn-default active" id="notice" style="box-shadow: none">
-            <input type="radio" name="options" autocomplete="off" checked><span
-                class="glyphicon glyphicon-bullhorn"></span>&nbsp;通知
-        </label>
-        <label class="btn btn-default" id="member" style="box-shadow: none">
-            <input type="radio" name="options" autocomplete="off" checked><span
-                class="glyphicon glyphicon-comment"></span>&nbsp;成员
-        </label>
-    </div>
-</div>
-<div id = "tab">
-    <c:import url="project/project_notice.jsp"/>
-</div>
-</div>
 </div>
 <c:import url="common/_footer.jsp"/>
 </body>

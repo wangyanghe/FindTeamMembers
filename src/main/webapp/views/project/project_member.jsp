@@ -26,7 +26,7 @@
                 </div>
                 <div class="media-body">
                     <h5 class="media-heading front-text-break">
-                        <span>${member.userName}</span>
+                        <a href="user/${member.id}">${member.userName}</a>
                     </h5>
                 </div>
             </div>

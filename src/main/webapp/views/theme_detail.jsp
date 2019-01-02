@@ -36,7 +36,8 @@
                             <span id="myThemeName">${theme.content}</span>
                         </h3>
                         <div id="author" style="word-wrap:break-word;word-break:break-all;padding-top: 2px;">
-                            发布人：${theme.author.userName}<a style="color: #8c8c8c; font-size: small"
+                            <a href="user/${theme.author.id}">发布人：${theme.author.userName}</a>
+                            <a style="color: #8c8c8c; font-size: small"
                                                            href="mailto:${theme.author.email}">&lt;${theme.author.email}&gt;</a></div>
                         <div >
                         </div>
